@@ -16,6 +16,6 @@ end
   PostTag.create(tag_id: Tag.all.to_a.sample.id, post_id: Post.all.to_a.sample.id)
 end
 
-25.times do
+150.times do
   Comment.create(comment_text: Faker::Company.bs, post_id: Post.all.to_a.sample.id)
 end

@@ -1,4 +1,11 @@
 <div class="container">
-  <h1>Welcome to the sweetness</h1>
-
+  <h1>Welcome To The Sweetness</h1>
 </div>
+
+
+<% @posts.each do |post| %>
+  <div class="container">
+    <h1><a href="/posts/<%= post.id %>"><%= post.post_title %></a></h1>
+    <p><%= post.post_text %></p>
+  </div>
+<% end %>

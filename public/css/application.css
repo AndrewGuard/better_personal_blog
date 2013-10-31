@@ -4,7 +4,26 @@
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
   background-color: pink;
+  border: 2px solid black;
+  border-radius: 15px;
 }
 th {
   text-align: left;
+}
+
+a:link {color:purple;}
+a:visited {color:purple;}
+a:hover {color:purple;}
+a:active {color:purple;}
+
+.home_page {
+  list-style-type: inline;
+  position: fixed;
+  right: 10px;
+  padding: 20px 20px 20px 20px;
+  top: 10px;
+  background-color: pink;
+  border: 2px solid black;
+  border-radius: 15px;
+  text: black;
 }

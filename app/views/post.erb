@@ -1,0 +1,22 @@
+<div class="container">
+  <h1><%= @post.post_title %></h1>
+  </p><%= @post.post_text %></p>
+</div>
+
+<div class="container">
+  <h2> Comments </h2>
+  <% if @comments %>
+    <% @comments.each do |comment| %>
+      <p><%= comment.comment_text %><p>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="container">
+  <h3>Add a Comment </h3>
+  <form name="input" action="/post/<%=@post.id%>/create_comment" method="POST">
+    <!-- Your Email: <input type="text" name="email"><br> -->
+    Your Comment: <input type="text" name="comment_text"><br>
+    <input type="submit" value="submit">
+  </form>
+</div>
