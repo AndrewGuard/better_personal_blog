@@ -1,0 +1,7 @@
+<div class="container">
+  <h1><%= @tag.tag_title %></h1>
+  <h2> These are the blog posts tagged with the above tag </h2>
+  <% @tag_posts.each do |tag_post| %>
+    <p><a href="/posts/<%= tag_post.id %>"> <%= tag_post.post_title %> </a> </p>
+  <% end %>
+</div>

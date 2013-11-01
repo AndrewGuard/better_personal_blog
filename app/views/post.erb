@@ -1,6 +1,14 @@
 <div class="container">
   <h1><%= @post.post_title %></h1>
-  </p><%= @post.post_text %></p>
+  <p><%= @post.post_text %></p><br>
+  <% if @tags %>
+    <% @tags.each do |tag|%>
+        <p><a href="/tags/<%= tag.id%>"> <%= tag.tag_title%> </a></p>
+    <% end %>
+  <% end %>
+  <form action="/post/<%= @post.id %>/destroy">
+    <input type="submit" name="commit" value="Delete This Post">
+  </form>
 </div>
 
 <div class="container">

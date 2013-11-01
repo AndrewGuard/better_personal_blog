@@ -1,6 +1,6 @@
 .container {
   margin: 20px auto;
-  width: 800px;
+  width: 700px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
   background-color: pink;
@@ -16,14 +16,28 @@ a:visited {color:purple;}
 a:hover {color:purple;}
 a:active {color:purple;}
 
+
 .home_page {
-  list-style-type: inline;
+  width: 100%;
   position: fixed;
-  right: 10px;
-  padding: 20px 20px 20px 20px;
-  top: 10px;
+  top: 0px;
+  clear: both;
   background-color: pink;
-  border: 2px solid black;
-  border-radius: 15px;
-  text: black;
+  border-bottom: 2px solid black;
+  color: black;
 }
+
+.home_page ul {
+
+}
+
+.home_page li {
+  margin-right: 90px;
+  display: inline;
+  list-style-type: none;
+}
+
+body {
+  margin-top: 130px;
+}
+

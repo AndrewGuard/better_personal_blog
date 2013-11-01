@@ -19,9 +19,26 @@
 </head>
 <body>
   <div class="home_page">
-    <a href="/">Take Me Home!</a><br><br><br>
-    <a href="/login">Login or Sign Up!</a>
+    <ul>
+    <% if current_user %>
+      <p> Welcome, <%= current_user.first_name %> <%= current_user.last_name %></p>
+    <% end %>
+    <li><a href="/">See All Posts!</a></li>
+    <li><a href="/user/posts/:id">See Your Posts!</a></li>
+    <li><a href="/login">Login or Sign Up!</a></li>
+    <li><a href="/create_post_form">Create Post!</a></li>
+    <li><a href="/all_tags">See All Tags!</a></li>
+    <% if current_user %>
+      <li><a href="/logout">Log Out</a></li>
+    <% end %>
+  </ul>
   </div>
   <%= yield %>
 </body>
 </html>
+
+
+
+
+
+
