@@ -32,12 +32,15 @@ a:active {color:purple;}
 }
 
 .home_page li {
-  margin-right: 90px;
+  margin-right: 85px;
   display: inline;
   list-style-type: none;
 }
+.home_page li:last-child {
+  margin-right: 0px;
+}
 
 body {
-  margin-top: 130px;
+  margin-top: 100px;
 }
 

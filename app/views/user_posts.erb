@@ -1,4 +1,4 @@
-<% @posts.order('created_at DESC').all.each do |post| %>
+<% current_user.posts.order('created_at DESC').all.each do |post| %>
   <div class="container">
     <h1><a href="/posts/<%= post.id %>"><%= post.post_title %></a></h1>
     <p><%= post.post_text %></p><br>
