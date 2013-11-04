@@ -1,21 +1,27 @@
 <div class="container">
   <h1> Login </h1>
+  <% if @login_error %>
+    <h2> <%= @login_error %> </h2>
+  <% end %>
   <form name="input" action="/auth_user" method="POST">
-    Email: <input type="text" name="email"><br>
-    Password: <input type="password" name="password"><br>
+    Email: <input class="input_box" type="text" name="email"><br>
+    Password: <input class="input_box" type="password" name="password"><br>
     <input type="submit" value="login">
   </form>
 </div>
 
 <div class="container">
-  <h1> Sign Up! </h1>
+  <h1> Sign Up </h1>
+  <% if @error %>
+    <h2> <%= @error %> </h2>
+  <% end %>
   <form name="input" action="/create_user" method="POST">
-    First Name: <input type="text" name="first_name"><br>
-    Last Name: <input type="text" name="last_name"><br>
-    User Name: <input type="text" name="username"><br>
-    Email: <input type="text" name="email"><br>
-    Password: <input type="password" name="password"><br>
-    Conform Password: <input type="password" name="password_confirmation"><br>
+    First Name: <input class="input_box" type="text" name="first_name"><br>
+    Last Name: <input class="input_box" type="text" name="last_name"><br>
+    User Name: <input class="input_box" type="text" name="username"><br>
+    Email: <input class="input_box" type="text" name="email"><br>
+    Password: <input class="input_box" type="password" name="password"><br>
+    Conform Password: <input class="input_box" type="password" name="password_confirmation"><br>
     <input type="submit" value="create account">
   </form>
 </div>

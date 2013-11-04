@@ -2,8 +2,9 @@
   <h3> A list of all tags </h3>
 </div>
 
-<% @tags.each do |tag| %>
+<% @tags.order('created_at DESC').each do |tag| %>
   <div class="container">
     <p><a href="/tags/<%= tag.id%>"> <%= tag.tag_title%> </a></p>
+    <p>Created <%= tag.created_at %> </p>
   </div>
 <% end %>

@@ -12,8 +12,7 @@ get '/posts/:id' do
   erb :post
 end
 
-get '/user/posts/:id' do
-  @user_posts = User.find(session[:id]).posts
+get '/all_posts/:id' do
   erb :user_posts
 end
 
@@ -52,18 +51,24 @@ post '/post/:post_id/create_comment' do
 end
 
 post '/create_post' do
-  @post = Post.create(post_title: params[:post_title], post_text: params[:post_text])
+  @post = Post.create(post_title: params[:post_title], post_text: params[:post_text], user_id: current_user.id)
   redirect to "/posts/#{@post.id}"
 end
 
 post '/auth_user' do
   @posts = Post.all
-  @user = User.find_by_email(params[:email])
-  if @user.authenticate(params[:password])
-    session[:id] = @user.id
-    redirect to '/'
+  user = User.find_by_email(params[:email])
+  if user
+    if user.authenticate(params[:password])
+      session[:id] = user.id
+      redirect to '/all_posts/:id'
+    else
+      @login_error = "Login Fail"
+      erb :login
+    end
   else
-    redirect to '/'
+    @login_error = "Login Fail"
+    erb :login
   end
 end
 
@@ -74,10 +79,18 @@ post '/post/:id/destroy' do
 end
 
 post '/create_user' do
-  @user = User.create(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
-  session[:id] = @user.id
-  redirect to '/'
+  user = User.new(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password])
+  if user.valid?
+    if user.authenticate(params[:password_confirmation])
+      user.save
+      session[:id] = user.id
+      redirect to '/'
+    else
+      @error = "Create User Fail"
+      erb :login
+    end
+  else
+    @error = "Create User Fail"
+    erb :login
+  end
 end
-
-
-
