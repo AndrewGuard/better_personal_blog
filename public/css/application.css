@@ -1,42 +1,53 @@
-.container {
-  margin: 20px auto;
-  width: 700px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
-  background-color: pink;
-  border: 2px solid black;
-  border-radius: 15px;
+.bg {
+  background: url('http://owoll.com/wp-content/uploads/2013/10/Hot-Air-Balloon-Flying-Wallpaper-HD.jpg') repeat;
+  position: fixed;
+  width: 100%;
+  height: 300%;
+  top:0;
+  left:0;
+  z-index: -1;
 }
+
+.container {
+  margin: 60px auto;
+  width: 100%;
+  padding: 0px 20px 20px 20px;
+  /*border: 1px dotted black;*/
+  background-color: rgba(48, 97, 8, 0.42);
+/*  border: 2px solid black;
+*/  z-index: 1;
+}
+
 th {
   text-align: left;
 }
 
-a:link {color:purple;}
-a:visited {color:purple;}
-a:hover {color:purple;}
-a:active {color:purple;}
+a:link {color:darkslateblue;}
+a:visited {color:darkslateblue;}
+a:hover {color:darkslateblue;}
+a:active {color:darkslateblue;}
 
 
-.home_page {
-  width: 100%;
+.nav-bar {
+  width: 60%;
   position: fixed;
   top: 0px;
   clear: both;
-  background-color: pink;
+  /*background-color: aquamarine;*/
   border-bottom: 2px solid black;
   color: black;
 }
 
-.home_page ul {
+.nav-bar ul {
 
 }
 
-.home_page li {
+.nav-bar li {
   margin-right: 85px;
   display: inline;
   list-style-type: none;
 }
-.home_page li:last-child {
+.nav-bar li:last-child {
   margin-right: 0px;
 }
 
