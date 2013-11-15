@@ -18,20 +18,25 @@
   <title></title>
 </head>
 <body>
-  <div class="bg"></div>
+  <div class="bg1">
+    <div id="background1"></div>
+    <div id="background2"></div>
+    <div id="background3"></div>
+    <div id="background4"></div>
+    <div id="background5"></div>
+  </div>
   <div class="nav-bar">
     <ul>
     <% if current_user %>
-      <p> Welcome to the sweetness, <%= current_user.first_name %> <%= current_user.last_name %>! </p>
+      <li class="header-button" ><%= current_user.first_name %></li>
+      <li class="header-button"><a href="/all_posts/<%= current_user.id %>">See Your Posts</a></li>
+      <li class="header-button"><a href="/create_post_form">Create Post</a></li>
+      <li class="header-button"><a href="/logout">Log Out</a></li>
+    <% else %>
+      <li class="header-button"><a href="/login">Login or Sign Up</a></li>
     <% end %>
-    <li><a href="/">See All Posts</a></li>
-    <li><a href="/login">Login or Sign Up</a></li>
-    <li><a href="/all_tags">See All Tags</a></li>
-    <% if current_user %>
-      <li><a href="/all_posts/<%= current_user.id %>">See Your Posts</a></li>
-      <li><a href="/create_post_form">Create Post</a></li>
-      <li><a href="/logout">Log Out</a></li>
-    <% end %>
+    <li class="header-button"><a href="/">See All Posts</a></li>
+    <li class="header-button"><a href="/all_tags">See All Tags</a></li>
   </ul>
   </div>
   <%= yield %>

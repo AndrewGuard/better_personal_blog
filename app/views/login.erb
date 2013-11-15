@@ -1,27 +1,58 @@
-<div class="container">
+<div class="sign-in">
   <h1> Login </h1>
   <% if @login_error %>
-    <h2> <%= @login_error %> </h2>
+  <h2> <%= @login_error %> </h2>
   <% end %>
   <form name="input" action="/auth_user" method="POST">
-    Email: <input class="input_box" type="text" name="email"><br>
-    Password: <input class="input_box" type="password" name="password"><br>
-    <input type="submit" value="login">
+    <table>
+      <tr>
+        <td><label for="login"> Email </label><td>
+        <td><input type="text" name="email"/></td>
+      </tr>
+      <tr>
+        <td><label for="login"> Password </label><td>
+        <td><input type="password" name="password"/></td>
+      </tr>
+    </table>
+    <input type="submit" value="Login">
   </form>
 </div>
 
-<div class="container">
+<div class="sign-in">
   <h1> Sign Up </h1>
   <% if @error %>
-    <h2> <%= @error %> </h2>
+  <h2> <%= @error %> </h2>
   <% end %>
   <form name="input" action="/create_user" method="POST">
-    First Name: <input class="input_box" type="text" name="first_name"><br>
-    Last Name: <input class="input_box" type="text" name="last_name"><br>
-    User Name: <input class="input_box" type="text" name="username"><br>
-    Email: <input class="input_box" type="text" name="email"><br>
-    Password: <input class="input_box" type="password" name="password"><br>
-    Conform Password: <input class="input_box" type="password" name="password_confirmation"><br>
-    <input type="submit" value="create account">
+    <table>
+      <tr>
+        <td><label for="new_user">  First Name </label></td>
+        <td><input type="text" name="first_name"/></td>
+      </tr>
+      <tr>
+        <td><label for="new_user">  Last Name </label></td>
+        <td><input type="text" name="last_name"/></td>
+      </tr>
+      <tr>
+        <td><label for="new_user"> Email Address </label></td>
+        <td><input type="text" name="email"/></td>
+      </tr>
+      <tr>
+        <td><label for="new_user"> Birthdate </label></td>
+        <td><input type="text" name="birthdate"/></td>
+      </tr>
+      <tr>
+        <td><label for="password"> Username </label></td>
+        <td><input type="password" name="username"/></td>
+      </tr>
+      <tr>
+        <td><label for="password"> Confirm Password </label></td>
+        <td><input type="password" name="password_confirmation"/></td>
+      </tr>
+
+      <tr>
+        <td><br><input type="submit" value="Create User"><br></td>
+      </tr>
+    </table>
   </form>
 </div>

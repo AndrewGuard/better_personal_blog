@@ -6,8 +6,12 @@
         <p><a href="/tags/<%= tag.id%>"> <%= tag.tag_title%> </a></p>
     <% end %>
   <% end %>
-  <form action="/post/<%= @post.id %>/destroy">
+  <form action="/post/<%= @post.id %>/destroy" method="POST">
     <input type="submit" name="commit" value="Delete This Post">
+  </form>
+  <br>
+  <form action="/post/<%= @post.id %>/edit" method="GET">
+    <input type="submit" name="commit" value="Edit This Post">
   </form>
 </div>
 
@@ -24,7 +28,15 @@
   <h3>Add a Comment </h3>
   <form name="input" action="/post/<%=@post.id%>/create_comment" method="POST">
     <!-- Your Email: <input type="text" name="email"><br> -->
-    Your Comment: <input type="text" name="comment_text"><br>
+    Your Comment: <textarea rows="4" cols="40" name="comment_text"> </textarea><br>
+    <input type="submit" value="submit">
+  </form>
+</div>
+
+<div class="container">
+  <h3>Add a Tag </h3>
+  <form name="input" action="/create_tag" method="POST">
+    Add a Tag: <input type="text" rows="4" cols="40" name="tag_title"> </input><br>
     <input type="submit" value="submit">
   </form>
 </div>
