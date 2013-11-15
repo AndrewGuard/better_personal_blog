@@ -40,6 +40,11 @@ get '/logout' do
   redirect to '/'
 end
 
+get '/post/:id/edit' do
+  @post = Post.find(params[:id])
+  erb :edit_post
+end
+
 # POST =======================================================================================================
 
 post '/post/:post_id/create_comment' do
@@ -73,9 +78,13 @@ post '/auth_user' do
 end
 
 post '/post/:id/destroy' do
-  @post = Post.find(params[:id])
-  @post.destroy
-  redirect to '/'
+  post = Post.find(params[:id])
+  if current_user
+    post.destroy
+    redirect to '/'
+  else
+    redirect '/login'
+  end
 end
 
 post '/create_user' do
@@ -92,5 +101,20 @@ post '/create_user' do
   else
     @error = "Create User Fail"
     erb :login
+  end
+end
+
+post '/create_tag' do
+  @tag = Tag.create(tag_title: params[:tag_title])
+  # Post_tag.create(tag_id: @tag.id, post_id: @post.id)
+  redirect to '/'
+end
+
+post '/post/:id/edit' do
+  @post = Post.find(params[:id])
+  if @post.update(post_title: params[:post_title], post_text: params[:post_text])
+    redirect to "/posts/#{@post.id}"
+  else
+    erb :edit_post
   end
 end
