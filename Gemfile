@@ -8,7 +8,7 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 
 # Use Thin for our web server
-gem 'thin'
+# gem 'thin'
 
 gem 'activesupport'
 gem 'activerecord'
@@ -17,7 +17,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'rake'
 
-gem 'shotgun'
+# gem 'shotgun'
 
 group :test do
   gem 'faker'
