@@ -11,9 +11,6 @@ $(document).ready(function() {
 });
 
 
-
-
-
 // function parallaxScroll() {
 // 	var scrolled = $(window).scrollTop();
 // 	$('.bg2').css('top', (0 -(scrolled * 0.2)) + 'px');
