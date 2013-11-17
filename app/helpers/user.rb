@@ -3,7 +3,5 @@ helpers do
     if session[:id]
       @current_user ||= User.find_by_id(session[:id])
     end
-  end
-
-  
+  end 
 end
